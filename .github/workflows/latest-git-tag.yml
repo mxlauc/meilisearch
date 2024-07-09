@@ -19,7 +19,7 @@ jobs:
         
       - name: Install essential
         run: |
-          wget http://ftp.gnu.org/gnu/gcc/gcc-9.2.0/gcc-9.2.0.tar.gz
+          curl -O -L http://ftp.gnu.org/gnu/gcc/gcc-9.2.0/gcc-9.2.0.tar.gz
           tar xf gcc-9.2.0.tar.gz
           cd gcc-9.2.0
           ./configure --disable-multilib --enable-languages=c,c++
