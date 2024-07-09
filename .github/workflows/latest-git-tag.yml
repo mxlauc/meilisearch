@@ -17,8 +17,8 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v3
         
-      #- name: Install essential
-      #run: sudo apt install build-essential
+      - name: Install essential
+        run: apt-get install gcc
       
       - name: Install cargo
         uses: actions-rs/toolchain@v1
