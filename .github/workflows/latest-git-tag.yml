@@ -4,11 +4,15 @@ on:
   push:
     branches: [ main2 ]
 
+
 jobs:
   check-version:
-    name: Check the version validity
+    name: Check the version validityrun:
     runs-on: ubuntu-latest
-    container: quay.io/pypa/manylinux2014_x86_64
+      env:
+          ACTIONS_RUNNER_FORCE_ACTIONS_NODE_VERSION: node16
+          ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+    container: centos:7
     steps:
       - name: Build
         uses: actions-rs/cargo@v1
