@@ -14,8 +14,14 @@ jobs:
         ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
     container: centos:7
     steps:
-      - name: Build
+      - name: Install cargo
         uses: actions-rs/toolchain@v1
+        with:
+            toolchain: nightly
+            override: true
+            components: rustfmt, clippy
+      - name: Compiling
+        uses: actions-rs/cargo@v1
         with:
           command: build
           args: --release
