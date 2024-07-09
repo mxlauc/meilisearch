@@ -15,7 +15,7 @@ jobs:
     container: centos:7
     steps:
       - name: Build
-        uses: actions-rs/cargo@v1
+        uses: actions-rs/toolchain@v1
         with:
           command: build
           args: --release
